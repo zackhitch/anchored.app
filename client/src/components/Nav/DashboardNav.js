@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
-import { connect } from 'react-redux';
-import axios from 'axios';
-import MediaQuery from 'react-responsive';
+import React, { Component } from "react";
+import { NavLink, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import axios from "axios";
+import MediaQuery from "react-responsive";
 
 import {
   NavGod,
@@ -23,11 +23,9 @@ import {
   ImageCropper,
   ProfilePic,
   ProfilePicWrapper,
-  TwitterAlert,
-  TwitterText,
-} from './styles/NavStyles.js';
-import { Dropdown, DropdownItem, Button } from 'reactstrap';
-import Logo from '../../assets/anchored_text.png';
+} from "./styles/NavStyles.js";
+import { Dropdown, DropdownItem, Button } from "reactstrap";
+import Logo from "../../assets/anchored_text.png";
 
 class NavBar extends Component {
   constructor(props) {
@@ -40,7 +38,7 @@ class NavBar extends Component {
   }
 
   toggle() {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       dropdownOpen: !prevState.dropdownOpen,
     }));
   }
@@ -49,13 +47,13 @@ class NavBar extends Component {
     axios
       .get(
         process.env.REACT_APP_LOGOUT_URL ||
-          'http://localhost:9000/auth/auth0/logout'
+          "http://localhost:9000/auth/auth0/logout"
       )
       .then(() => {
         window.location.reload();
-        window.location.replace('/');
+        window.location.replace("/");
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
 
   render() {
@@ -89,7 +87,7 @@ class NavBar extends Component {
           <Links>
             <MediaQuery minWidth={801}>
               <Credits>Credits: {this.props.user.credits}</Credits>
-              <NavLink exact to={`/buy`} style={{ textDecoration: 'none' }}>
+              <NavLink exact to={`/buy`} style={{ textDecoration: "none" }}>
                 <BuyCreditsButton>
                   <Button color="info" size="large">
                     Buy Credits
@@ -155,19 +153,19 @@ class NavBar extends Component {
                   <StyledDropdownItem>Dashboard</StyledDropdownItem>
                 </DropdownLink>
                 <MediaQuery maxWidth={800}>
-                  <DropdownDivider divider />{' '}
+                  <DropdownDivider divider />{" "}
                 </MediaQuery>
                 <DropdownLink to={`/account`}>
                   <StyledDropdownItem>Account</StyledDropdownItem>
                 </DropdownLink>
                 <MediaQuery maxWidth={800}>
-                  <DropdownDivider divider />{' '}
+                  <DropdownDivider divider />{" "}
                 </MediaQuery>
                 <DropdownLink to={`/settings`}>
                   <StyledDropdownItem>Settings</StyledDropdownItem>
                 </DropdownLink>
                 <MediaQuery maxWidth={800}>
-                  <DropdownDivider divider />{' '}
+                  <DropdownDivider divider />{" "}
                 </MediaQuery>
                 <Logout onClick={this.handleLogout}>
                   <StyledDropdownItem>Log out</StyledDropdownItem>
@@ -181,7 +179,7 @@ class NavBar extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     user: state.user.user,
     fetching: state.user.retrieving,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   TeamContainer,
   Members,
@@ -7,22 +7,39 @@ import {
   NameHeader,
   Role,
   H1,
-} from './styles/OurTeamStyles';
-import ZackImg from '../../assets/zack_web.png';
-import JeremyImg from '../../assets/jeremy_web.jpg';
-import SunitiImg from '../../assets/suniti.jpeg';
-import JaredImg from '../../assets/Jared_web.jpg';
-import SeanImg from '../../assets/sean_web.jpg';
-import RandyImg from '../../assets/RandyPicture_web.jpg';
-import BrandonImg from '../../assets/brandon_web.png';
-import ReactGA from 'react-ga';
+} from "./styles/OurTeamStyles";
+import ZackImg from "../../assets/zack_web.png";
+import JeremyImg from "../../assets/jeremy_web.jpg";
+import SunitiImg from "../../assets/suniti.jpeg";
+import JaredImg from "../../assets/Jared_web.jpg";
+import SeanImg from "../../assets/sean_web.jpg";
+import RandyImg from "../../assets/RandyPicture_web.jpg";
+import BrandonImg from "../../assets/brandon_web.png";
+import ReactGA from "react-ga";
 
 const OurTeam = () => {
-  ReactGA.pageview('/team');
+  ReactGA.pageview("/team");
   return (
     <TeamContainer>
       <H1>The Anchored Team</H1>
       <Members>
+        <TeamMember>
+          <img src={ZackImg} alt="Zack" />
+          <NameHeader>Zack Hitchcock</NameHeader>
+          <Role>Lead Full Stack Engineer</Role>
+          <Astyle href="https://github.com/zackhitch" target="_blank">
+            <i className="fab fa-github fa-2x" />
+          </Astyle>
+          <Astyle
+            href="https://www.linkedin.com/in/zackhitchcock/"
+            target="_blank"
+          >
+            <i className="fab fa-linkedin fa-2x" />
+          </Astyle>
+          <Astyle href="https://twitter.com/zackhtweets" target="_blank">
+            <i className="fab fa-twitter fa-2x" />
+          </Astyle>
+        </TeamMember>
         <TeamMember>
           <img src={BrandonImg} alt="Brandon" />
           <NameHeader>Brandon Aguirre</NameHeader>
@@ -51,23 +68,6 @@ const OurTeam = () => {
             <i className="fab fa-linkedin fa-2x" />
           </Astyle>
           <Astyle href="https://twitter.com/ProfJonesMusic" target="_blank">
-            <i className="fab fa-twitter fa-2x" />
-          </Astyle>
-        </TeamMember>
-        <TeamMember>
-          <img src={ZackImg} alt="Zack" />
-          <NameHeader>Zack Hitchcock</NameHeader>
-          <Role>Full Stack Developer</Role>
-          <Astyle href="https://github.com/zackhitch" target="_blank">
-            <i className="fab fa-github fa-2x" />
-          </Astyle>
-          <Astyle
-            href="https://www.linkedin.com/in/zackhitchcock/"
-            target="_blank"
-          >
-            <i className="fab fa-linkedin fa-2x" />
-          </Astyle>
-          <Astyle href="https://twitter.com/zackhtweets" target="_blank">
             <i className="fab fa-twitter fa-2x" />
           </Astyle>
         </TeamMember>

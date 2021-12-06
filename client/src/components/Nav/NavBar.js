@@ -1,16 +1,9 @@
-import React, { Component } from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
-import Auth0 from '../Auth/Auth0/Auth0.js';
-import NavButton from './NavButton.js';
-import {
-  NavGod,
-  TopNavBar,
-  Links,
-  Img,
-  TwitterAlert,
-  TwitterText,
-} from './styles/NavStyles.js';
-import Logo from '../../assets/anchored_text.png';
+import React, { Component } from "react";
+import { NavLink, withRouter } from "react-router-dom";
+import Auth0 from "../Auth/Auth0/Auth0.js";
+import NavButton from "./NavButton.js";
+import { NavGod, TopNavBar, Links, Img } from "./styles/NavStyles.js";
+import Logo from "../../assets/anchored_text.png";
 
 const auth = new Auth0();
 
@@ -19,7 +12,7 @@ class NavBar extends Component {
     return (
       <NavGod>
         <TopNavBar>
-          <NavLink to={'/'}>
+          <NavLink to={"/"}>
             <Img src={Logo} alt="Anchored Logo" />
           </NavLink>
           {/* Uncomment the TwitterAlert section if needed due to high traffic */}
@@ -34,7 +27,7 @@ class NavBar extends Component {
             <NavLink
               to={`/`}
               onClick={auth.signUp}
-              style={{ textDecoration: 'none' }}
+              style={{ textDecoration: "none" }}
             >
               <NavButton
                 name="Sign Up"
@@ -47,7 +40,7 @@ class NavBar extends Component {
             <NavLink
               to={`/`}
               onClick={auth.login}
-              style={{ textDecoration: 'none' }}
+              style={{ textDecoration: "none" }}
             >
               <NavButton
                 name="Log In"
